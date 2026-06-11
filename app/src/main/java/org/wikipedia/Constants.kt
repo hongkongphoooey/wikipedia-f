@@ -43,7 +43,7 @@ object Constants {
 
     const val MAX_READING_LIST_ARTICLE_LIMIT = 5000
     const val MAX_READING_LISTS_LIMIT = 100
-    const val MAX_TABS = 100
+    const val MAX_TABS = 999
     const val MIN_LANGUAGES_TO_UNLOCK_TRANSLATION = 2
     const val PLAIN_TEXT_MIME_TYPE = "text/plain"
     const val PREFERRED_CARD_THUMBNAIL_SIZE = 960
