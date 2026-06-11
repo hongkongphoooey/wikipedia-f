@@ -132,7 +132,7 @@ android {
         }
         fdroid {
             versionName computeVersionName(defaultConfig.versionCode, 'fdroid')
-            signingConfig = signingConfigs.prod
+            signingConfig = signingConfigs.debug
         }
         custom {
             versionName computeVersionName(defaultConfig.versionCode, customChannel)
