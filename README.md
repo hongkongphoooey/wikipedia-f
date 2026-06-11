@@ -1,7 +1,7 @@
 
-### Wikipedia Android app
+### Wikipedia Android app - FORK
 
-This repository contains the source code for the official [Wikipedia Android app](https://play.google.com/store/apps/details?id=org.wikipedia), patched by [hongkongphoooey](https://github.com/hongkongphoooey) to personal specifications.
+This repository contains the source code for the [Wikipedia Android app](https://play.google.com/store/apps/details?id=org.wikipedia), patched by [hongkongphoooey](https://github.com/hongkongphoooey) to personal specifications.
 
 ### Changelog:
 * v1.0.0: maximum number of tabs bumped from 100 to 999, analytics code commented out, A/B testing opted out, using debug signing, added build.yml as a basic Action to compile with Gradle, disabled original Actions.
