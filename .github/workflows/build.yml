@@ -23,9 +23,13 @@ jobs:
 
       - run: chmod +x gradlew
 
-      - run: ./gradlew :app:assembleFdroidRelease
+      - name: Build APK
+        run: ./gradlew :app:assembleFdroidRelease
 
-      - run: cp app/build/outputs/apk/release/app-fdroid-release.apk app.apk
+      - name: Rename APK
+        run: |
+          APK=$(find app/build/outputs -name "*.apk" | head -n1)
+          cp "$APK" app.apk
 
       - uses: softprops/action-gh-release@v2
         with:
