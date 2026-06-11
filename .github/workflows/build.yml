@@ -31,7 +31,7 @@ jobs:
           APK=$(find app/build/outputs -name "*.apk" | head -n1)
           cp "$APK" app.apk
 
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           files: app.apk
           generate_release_notes: true
