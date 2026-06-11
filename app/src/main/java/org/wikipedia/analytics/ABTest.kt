@@ -8,25 +8,27 @@ abstract class ABTest(private val abTestName: String, private val abTestGroupCou
     val name get() = abTestName
 
     val group: Int
-        get() {
+	get() = GROUP_1
+    	/*get() {
             testGroup = PrefsIoUtil.getInt(AB_TEST_KEY_PREFIX + abTestName, -1)
             if (testGroup == -1) {
                 assignGroup()
                 PrefsIoUtil.setInt(AB_TEST_KEY_PREFIX + abTestName, testGroup)
             }
             return testGroup
-        }
+        }*/
 
     protected var testGroup: Int = -1
 
     protected open fun assignGroup() {
-        testGroup = Random(System.currentTimeMillis()).nextInt(Int.MAX_VALUE).mod(abTestGroupCount)
+        //testGroup = Random(System.currentTimeMillis()).nextInt(Int.MAX_VALUE).mod(abTestGroupCount)
     }
 
     abstract fun getGroupName(): String
 
     open fun shouldInstrument(): Boolean {
-        return true
+        //return true
+	return false
     }
 
     companion object {

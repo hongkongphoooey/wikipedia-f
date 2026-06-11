@@ -78,7 +78,8 @@ object EventPlatformClient {
      * @param event event
      */
     fun submit(event: Event) {
-        if (STREAM_CONFIGS.isEmpty()) {
+        return
+	/*if (STREAM_CONFIGS.isEmpty()) {
             // We haven't gotten stream configs yet, so queue up the event in our initial queue.
             synchronized(INITIAL_QUEUE) {
                 // We want the queue to work as a circular buffer, so if it's full, remove the oldest item.
@@ -89,7 +90,7 @@ object EventPlatformClient {
             }
             return
         }
-        doSubmit(event)
+        doSubmit(event)*/
     }
 
     private fun doSubmit(event: Event) {
@@ -115,13 +116,14 @@ object EventPlatformClient {
     }
 
     suspend fun refreshStreamConfigs() {
-        STREAM_CONFIGS.clear()
+        return
+	/*STREAM_CONFIGS.clear()
         STREAM_CONFIGS.putAll(ServiceFactory.get(WikiSite(BuildConfig.META_WIKI_BASE_URI)).getStreamConfigs().streamConfigs)
         // Ensure that serialization of configs is done off the main thread
         withContext(Dispatchers.Default) {
             Prefs.streamConfigs = STREAM_CONFIGS
             TestKitchenAdapter.client.updateSourceConfig(STREAM_CONFIGS)
-        }
+        }*/
     }
 
     fun setUpStreamConfigs() {
@@ -200,11 +202,12 @@ object EventPlatformClient {
          * can contain events of different streams
          */
         private fun send(eventsByStream: Map<String, List<Event>>) {
-            eventsByStream.forEach { (stream, events) ->
+            return
+	    /*eventsByStream.forEach { (stream, events) ->
                 getStreamConfig(stream)?.let {
                     sendEventsForStream(it.destinationEventService, events)
                 }
-            }
+            }*/
         }
 
         private fun sendEventsForStream(destinationEventService: DestinationEventService, events: List<Event>) {
