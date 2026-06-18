@@ -20,7 +20,7 @@ static def computeVersionName(versionCode, label) {
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 37
 
     compileOptions {
         coreLibraryDesugaringEnabled = true
